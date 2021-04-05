@@ -27,7 +27,7 @@ searchForm.addEventListener('submit', (event) => {
     place.innerHTML = null;
 
     const location = inputEl.value;
-    const url = "http://localhost:3000/weather?location="+location;
+    const url = "/weather?location="+location;
 
     fetch(url)
     .then(res => {
@@ -39,7 +39,7 @@ searchForm.addEventListener('submit', (event) => {
                 desc.innerHTML = data.description;
                 real.innerHTML = data.temperature;
                 app.innerHTML = "Feels Like "+data.apparent;
-                minMax.innerHTML = data.min+" / "+data.max;
+                minMax.innerHTML = "Min/Max : "+data.min+" / "+data.max;
                 date.innerHTML = new Date();
             }
         })

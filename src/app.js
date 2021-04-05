@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 // Library imports
->>>>>>> b39bb3d... Initial Commit
 const express = require('express');
 const path = require('path');
 const hbs = require('hbs');
@@ -12,6 +9,7 @@ const forecast = require('./utility/forecast');
 
 // Intitializing the express app
 const app = express();
+const port = process.env.PORT || 3000;
 
 // Paths for express configuration
 const publicDirPath = path.join(__dirname,'../public');
@@ -94,7 +92,7 @@ app.get('*', (req,res) => {
 })
 
 // Assigning the port for the development server
-app.listen(3000, () => {
-    console.log("Server is running on port 3000");
+app.listen(port, () => {
+    console.log("Server is running on port "+port);
 })
 
